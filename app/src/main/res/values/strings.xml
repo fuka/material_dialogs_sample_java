@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">material-dialogs-sample-java</string>
+
+    <string name="simple_dialog_title">Basic dialog</string>
+    <string name="simple_dialog_message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="simple_dialog_positive">OK</string>
+    <string name="simple_dialog_negative">Cancel</string>
+</resources>
