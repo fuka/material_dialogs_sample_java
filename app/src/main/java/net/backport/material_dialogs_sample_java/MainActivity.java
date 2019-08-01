@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
 	private void showBasicDialog() {
 
-		MaterialDialog dialog = new MaterialDialog(this);
+		MaterialDialog dialog = new MaterialDialog(this, MaterialDialog.getDEFAULT_BEHAVIOR());
 		dialog.title(null, "Basic dialog");
-		dialog.message(null, "Dialog message.", false, 1);
+		dialog.message(null, "Dialog message.", null);
 		dialog.positiveButton(null, "OK", materialDialog -> {
 			Toast.makeText(MainActivity.this, "onPositive", Toast.LENGTH_SHORT).show();
 			return null;
@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
 	private void showBasicResDialog() {
 
-		MaterialDialog dialog = new MaterialDialog(this);
+		MaterialDialog dialog = new MaterialDialog(this, MaterialDialog.getDEFAULT_BEHAVIOR());
 		dialog.title(R.string.simple_dialog_title, null);
-		dialog.message(R.string.simple_dialog_message, null, false, 1);
+		dialog.message(R.string.simple_dialog_message, null, null);
 		dialog.icon(R.mipmap.ic_launcher, null);
 		dialog.positiveButton(R.string.simple_dialog_positive, null, null);
 		dialog.negativeButton(R.string.simple_dialog_negative, null, null);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 		String[] args = {"Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich", "Jelly Bean", "KitKat", "Lollipop", "Marshmallow", "Nougat", "Oreo", "Pie"};
 		List<String> list = Arrays.asList(args);
 
-		MaterialDialog dialog = new MaterialDialog(this);
+		MaterialDialog dialog = new MaterialDialog(this, MaterialDialog.getDEFAULT_BEHAVIOR());
 		dialog.title(null, "List dialog");
 		DialogListExtKt.listItems(dialog, null, list, null, false, (materialDialog, integer, s) -> {
 			String str = s + " (index: " + integer + ")";
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 		String[] args = {"Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb", "Ice Cream Sandwich", "Jelly Bean", "KitKat", "Lollipop", "Marshmallow", "Nougat", "Oreo", "Pie"};
 		List<String> list = Arrays.asList(args);
 
-		MaterialDialog dialog = new MaterialDialog(this);
+		MaterialDialog dialog = new MaterialDialog(this, MaterialDialog.getDEFAULT_BEHAVIOR());
 		dialog.title(null, "List dialog");
 		DialogSingleChoiceExtKt.listItemsSingleChoice(dialog, null, list, null, 0, true, (materialDialog, integer, s) -> {
 			String str = s + " (index: " + integer + ")";
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
 		int[] selected = new int[]{0, 1};
 
-		MaterialDialog dialog = new MaterialDialog(this);
+		MaterialDialog dialog = new MaterialDialog(this, MaterialDialog.getDEFAULT_BEHAVIOR());
 		dialog.title(null, "List dialog");
 		DialogMultiChoiceExtKt.listItemsMultiChoice(dialog, null, list, null, selected, true, false, (materialDialog, ints, strings) -> {
 
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 	@SuppressLint("CheckResult")
 	private void showInputDialog() {
 
-		MaterialDialog dialog = new MaterialDialog(this);
+		MaterialDialog dialog = new MaterialDialog(this, MaterialDialog.getDEFAULT_BEHAVIOR());
 		dialog.title(null, "Input dialog");
 		DialogInputExtKt.input(dialog, "Hint text.", null, null, null, InputType.TYPE_CLASS_TEXT, 100, false, false, null);
 		dialog.positiveButton(null, "OK", null);
@@ -147,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
 
 		CustomView customView = new CustomView(this);
 
-		MaterialDialog dialog = new MaterialDialog(this);
-		DialogCustomViewExtKt.customView(dialog, null, customView, false, true, false);
+		MaterialDialog dialog = new MaterialDialog(this, MaterialDialog.getDEFAULT_BEHAVIOR());
+		DialogCustomViewExtKt.customView(dialog, null, customView, false, false, true, true);
 		dialog.positiveButton(null, "Close", null);
 		dialog.show();
 	}
