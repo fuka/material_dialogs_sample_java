@@ -1,7 +1,9 @@
 # material_dialogs_sample_java
 
-This sample is using [afollestad/material-dialogs](https://github.com/afollestad/material-dialogs) with Java.
+This is an example of using [afollestad/material-dialogs](https://github.com/afollestad/material-dialogs) from Java.
 
-material-dialogs version 2.x is designed specifically to work with Kotlin. Also, The official site does not mention how to use in Java.
+material-dialogs was shifted to Kotlin in version 2.0. 
+Kotlin and Java are interchangeable, so you can also call them from Java.
+However, the official site does not show how to use it from Java.
 
-So, I summarized how to use in Java in a sample project.
+So, I made a sample project that summarizes how to call it from Java.
